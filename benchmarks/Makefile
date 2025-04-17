@@ -41,10 +41,10 @@ base_bmarks = \
 	pmp \
 
 vec_bmarks = \
-	vec-memcpy \
-	vec-daxpy \
-	vec-sgemm \
-	vec-strcmp \
+#	vec-memcpy \
+#	vec-daxpy \
+#	vec-sgemm \
+#	vec-strcmp \
 
 bmarks = $(base_bmarks) $(vec_bmarks)
 
@@ -52,7 +52,8 @@ bmarks = $(base_bmarks) $(vec_bmarks)
 # Build rules
 #--------------------------------------------------------------------
 
-RISCV_PREFIX ?= riscv$(XLEN)-unknown-elf-
+#RISCV_PREFIX ?= riscv$(XLEN)-unknown-elf-
+RISCV_PREFIX ?= riscv$(XLEN)-linux-gnu-
 RISCV_GCC ?= $(RISCV_PREFIX)gcc
 RISCV_GCC_OPTS ?= -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -Wno-implicit-int -Wno-implicit-function-declaration -mabi=$(ABI)
 RISCV_LINK ?= $(RISCV_GCC) -T $(src_dir)/common/test.ld $(incs)

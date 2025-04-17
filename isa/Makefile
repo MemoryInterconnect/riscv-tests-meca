@@ -20,10 +20,10 @@ include $(src_dir)/rv64uzbc/Makefrag
 include $(src_dir)/rv64uzbs/Makefrag
 include $(src_dir)/rv64si/Makefrag
 include $(src_dir)/rv64ssvnapot/Makefrag
-include $(src_dir)/rv64mi/Makefrag
 include $(src_dir)/rv64mzicbo/Makefrag
 include $(src_dir)/hypervisor/Makefrag
-endif
+else
+include $(src_dir)/rv64mi/Makefrag
 include $(src_dir)/rv32ui/Makefrag
 include $(src_dir)/rv32uc/Makefrag
 include $(src_dir)/rv32um/Makefrag
@@ -37,6 +37,7 @@ include $(src_dir)/rv32uzbc/Makefrag
 include $(src_dir)/rv32uzbs/Makefrag
 include $(src_dir)/rv32si/Makefrag
 include $(src_dir)/rv32mi/Makefrag
+endif
 
 default: all
 
